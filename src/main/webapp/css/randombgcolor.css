@@ -1,0 +1,97 @@
+	
+		#radius {
+		  display: inline-block;
+		  width: 35px;
+		  height: 35px;
+		  margin-top : 6px;
+		  margin-bottom : 6px;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  border-radius: 18px;
+		  background-color: red;
+		  line-height: 35px;
+		  font-size: 19px;
+		  font-weight: bold;
+		  color: #fff;
+		  text-align: center;
+		}
+		#radiusone {
+		  display: inline-block;
+		  width: 35px;
+		  height: 35px;
+		  margin-top : 6px;
+		  margin-bottom : 6px;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  border-radius: 18px;
+		  background-color: #f29d21;
+		  line-height: 35px;
+		  font-size: 19px;
+		  font-weight: bold;
+		  color: #fff;
+		  text-align: center;
+		}
+		#radiustwo {
+		  display: inline-block;
+		  width: 35px;
+		  height: 35px;
+		  margin-top : 6px;
+		  margin-bottom : 6px;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  border-radius: 18px;
+		  background-color: #3f55ac;
+		  line-height: 35px;
+		  font-size: 19px;
+		  font-weight: bold;
+		  color: #fff;
+		  text-align: center;
+		}
+		#radiusthree {
+		  display: inline-block;
+		  width: 35px;
+		  height: 35px;
+		  margin-top : 6px;
+		  margin-bottom : 6px;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  border-radius: 18px;
+		  background-color: #de480e;
+		  line-height: 35px;
+		  font-size: 19px;
+		  font-weight: bold;
+		  color: #fff;
+		  text-align: center;
+		}
+		#radiusfour {
+		  display: inline-block;
+		  width: 35px;
+		  height: 35px;
+		  margin-top : 6px;
+		  margin-bottom : 6px;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  border-radius: 18px;
+		  background-color: #6e7795;
+		  line-height: 35px;
+		  font-size: 19px;
+		  font-weight: bold;
+		  color: #fff;
+		  text-align: center;
+		}
+		#radiusfive {
+		  display: inline-block;
+		  width: 35px;
+		  height: 35px;
+		  margin-top : 6px;
+		  margin-bottom : 6px;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  border-radius: 18px;
+		  background-color: #02c241;
+		  line-height: 35px;
+		  font-size: 19px;
+		  font-weight: bold;
+		  color: #fff;
+		  text-align: center;
+		}
