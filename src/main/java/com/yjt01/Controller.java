@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Controller
@@ -37,6 +38,7 @@ public class Controller extends HttpServlet {
 		String fname = uri.substring(conpath.length());
 		String vpage = null;
 		Service comm;
+
 		if(fname.equals("/sign.do")) {
 			comm=new Sign();
 			comm.exec(request, response);
@@ -52,6 +54,7 @@ public class Controller extends HttpServlet {
 				val = comm.execc(request, response);
 				if(val==1) {
 					vpage="out.jsp";
+				
 					RequestDispatcher rd = request.getRequestDispatcher(vpage);
 					rd.forward(request, response);
 				}
@@ -61,7 +64,7 @@ public class Controller extends HttpServlet {
 					PrintWriter out = response.getWriter();
 					out.println("<script>alert('로그인 실패. 다시 시도해주세요.'); location.href='login.jsp';</script>");
 					out.flush();
-}
+				}
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

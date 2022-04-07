@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 public class DAO {
 	Connection con;
@@ -42,7 +43,7 @@ public class DAO {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		String sql = "SELECT id,pw FROM user WHERE id=? AND pw=?";
+		String sql = "SELECT id,pw,name FROM user WHERE id=? AND pw=?";
 		int log=0;
 		
 			Class.forName(driver);
@@ -54,6 +55,9 @@ public class DAO {
 			if(rs.next()) {
 				if(rs.getString(1)!=null) {
 					log=1;
+					HttpSession hs = request.getSession(true);
+					System.out.println("session name"+rs.getString(3));
+					hs.setAttribute("id", rs.getString(3));
 					return log;//DB서치 후 값이 있으면 리턴 1
 				}
 				else {
