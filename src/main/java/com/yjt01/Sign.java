@@ -13,12 +13,17 @@ public class Sign implements Service{
 		DAO dao = new DAO();
 		try {
 			dao.sign(request);
-			
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public int execc(HttpServletRequest request, HttpServletResponse response)
+			throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

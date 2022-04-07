@@ -53,15 +53,15 @@ height: 100%;
 
           <!-- id input -->
           <div class="form-outline mb-3">
-            <input type="text"class="form-control form-control-lg"
-              placeholder="아이디" />
+            <input name="id" type="text"class="form-control form-control-lg"
+              placeholder="아이디" required="required"/>
             <label class="form-label">ID</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input type="password" class="form-control form-control-lg"
-              placeholder="비밀번호" />
+            <input name="pw" type="password" class="form-control form-control-lg"
+              placeholder="비밀번호" required="required"/>
             <label class="form-label">PASSWORD</label>
           </div>
 

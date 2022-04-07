@@ -38,4 +38,32 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
+	public int login(HttpServletRequest request) throws SQLException, ClassNotFoundException {
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		String sql = "SELECT id,pw FROM user WHERE id=? AND pw=?";
+		int log=0;
+		
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, username, password);
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+			rs=psmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString(1)!=null) {
+					log=1;
+					return log;//DB서치 후 값이 있으면 리턴 1
+				}
+				else {
+					log=2;
+					return log;//DB서치 후 값이 없으면 리턴 2
+				}
+			}
+			
+			
+		return log;
+	}
+	
 }

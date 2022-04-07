@@ -35,7 +35,7 @@ height: 100%;
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-
+나는아웃
 <section style="bottom: 0; position: absolute; width: 100%">
   <div class="d-flex flex-column flex-md-row text-center text-md-start  py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->

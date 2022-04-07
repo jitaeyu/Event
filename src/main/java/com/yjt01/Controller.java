@@ -1,7 +1,10 @@
 package com.yjt01;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 
+import javax.script.ScriptContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,17 +40,40 @@ public class Controller extends HttpServlet {
 		if(fname.equals("/sign.do")) {
 			comm=new Sign();
 			comm.exec(request, response);
-			vpage="login.jsp";
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('계정이 등록 되었습니다'); location.href='login.jsp';</script>");
+			out.flush();
 		}
 		if(fname.equals("/login.do")) {
-			comm=new Sign();
-			comm.exec(request, response);
-			vpage="login.jsp";
+			comm=new Login();
+			int val;
+			try {
+				val = comm.execc(request, response);
+				if(val==1) {
+					vpage="out.jsp";
+					RequestDispatcher rd = request.getRequestDispatcher(vpage);
+					rd.forward(request, response);
+				}
+				else {
+					vpage="login.jsp";
+					response.setContentType("text/html; charset=UTF-8");
+					PrintWriter out = response.getWriter();
+					out.println("<script>alert('로그인 실패. 다시 시도해주세요.'); location.href='login.jsp';</script>");
+					out.flush();
+}
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		
 		}
-		
-		
-		RequestDispatcher rd = request.getRequestDispatcher(vpage);
-		rd.forward(request, response);
+
 	}
 
 
