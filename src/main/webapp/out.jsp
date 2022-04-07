@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="p"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,20 @@ height: 100%;
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
+
 <body>
+<!-- As a heading -->
+<nav class="navbar navbar-dark bg-primary">
+	<div>&emsp;</div>
+	
+	<div style="color: white" class="navbar-text">
+   		 <p:forEach items="${id}" var="my" begin="0" end="0">
+			 <div class="h5">${my} 님 환영합니다 </div>
+		</p:forEach> 
+	</div>
+</nav>
+
+
 나는아웃
 <section style="bottom: 0; position: absolute; width: 100%">
   <div class="d-flex flex-column flex-md-row text-center text-md-start  py-4 px-4 px-xl-5 bg-primary">
