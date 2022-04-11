@@ -53,6 +53,8 @@ public class Controller extends HttpServlet {
 			try {
 				val = comm.execc(request, response);
 				if(val==1) {
+					comm=new Mainout();
+					comm.exec(request, response);
 					vpage="out.jsp";
 				
 					RequestDispatcher rd = request.getRequestDispatcher(vpage);
@@ -72,9 +74,35 @@ public class Controller extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
+		}
 		
+		if(fname.equals("/logout.do")) {
+			response.setContentType("text/html; charset=UTF-8");
+			HttpSession hs = request.getSession();
+			  hs.invalidate();//세션 제거 로그아웃.
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('로그아웃이 되었습니다.'); location.href='login.jsp';</script>");
+			out.flush();
+		}
+		
+		if(fname.equals("/clientinput.do")) {
+			comm=new Clientinput();
+			comm.exec(request, response);
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('인원이 등록 되었습니다'); location.href='out.jsp';</script>");
+			out.flush();
+		}
+		
+		if(fname.equals("/eventinput.do")) {
+			comm=new Eventinput();
+			comm.exec(request, response);
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('행사가 등록 되었습니다');history.back();</script>");
+			
+			out.flush();
+//			 location.href='out.jsp';
 		}
 
 	}
