@@ -55,6 +55,7 @@ public class Controller extends HttpServlet {
 				if(val==1) {
 					comm=new Mainout();
 					comm.exec(request, response);
+					
 					vpage="out.jsp";
 				
 					RequestDispatcher rd = request.getRequestDispatcher(vpage);

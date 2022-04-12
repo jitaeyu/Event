@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
   <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="p" %>
+   <%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
     <!DOCTYPE html>
     <html>
 
@@ -59,31 +60,31 @@
             <caption align="top">Section A<button>ButtonA</button></caption>
             <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">번호</th>
+                <th scope="col">이름</th>
+                <th scope="col">행사</th>
+                <th scope="col">행사일자</th>
+                <th scope="col">축의금,조의금</th>
+                <th scope="col">코멘트</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              <p:forEach items="${clist}" var="content" varStatus="status">
+                <tr>
+                  <th class="btn-outline" scope="row">${status.count}</th>
+                  <td><a id="${content.cnum}" onclick="namevalue()" data-bs-toggle="modal"
+                      data-bs-target="#modalcontent" data-bs-whatever="@mdo">${content.name}</a></td>
+               		<td>${content.event}</td>
+               		<td>${content.date}</td>
+               		<td>
+	               		<f:formatNumber type="number">
+	               			${content.money}
+	               		</f:formatNumber>
+               		</td>
+
+               		<td>${content.coment}</td>
+                </tr>
+              </p:forEach>
             </tbody>
           </table>
         </div>
