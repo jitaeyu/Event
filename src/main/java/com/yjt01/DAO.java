@@ -105,6 +105,33 @@ public class DAO {
 			return list;
 	}
 	
+	public ArrayList<ContentDTO> outcontent(HttpServletRequest request) throws ClassNotFoundException, SQLException {
+		String id = request.getParameter("id");
+		System.out.println(id);
+		ArrayList<ContentDTO> clist = new ArrayList<ContentDTO>();
+		String sql = "SELECT * FROM clientevent WHERE id=?";
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, username, password);
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs=psmt.executeQuery();
+			while(rs.next()) {
+				ContentDTO dto = new ContentDTO();
+				dto.setCnum(rs.getInt(1));
+				dto.setId(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setEvent(rs.getString(4));
+				dto.setDate(rs.getString(5));
+				dto.setMoney(rs.getInt(6));
+				dto.setComent(rs.getString(7));
+				
+				clist.add(dto);
+
+			}
+			return clist;
+	}
+	
+	
 	public void eventinput(HttpServletRequest request) throws SQLException {
 		// TODO Auto-generated method stub
 				String id = request.getParameter("id");

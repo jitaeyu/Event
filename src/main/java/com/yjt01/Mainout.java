@@ -23,6 +23,19 @@ public class Mainout implements Service{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		try {
+			ArrayList<ContentDTO> clist= dao.outcontent(request);
+			request.setAttribute("clist", clist);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
