@@ -109,7 +109,7 @@ public class DAO {
 		String id = request.getParameter("id");
 		System.out.println(id);
 		ArrayList<ContentDTO> clist = new ArrayList<ContentDTO>();
-		String sql = "SELECT * FROM clientevent WHERE id=?";
+		String sql = "SELECT * FROM clientevent WHERE id=? ORDER BY date DESC";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, username, password);
 			psmt=con.prepareStatement(sql);
@@ -129,6 +129,22 @@ public class DAO {
 
 			}
 			return clist;
+	}
+	
+	public ArrayList<Integer> sum(HttpServletRequest request) throws ClassNotFoundException, SQLException {
+		String id = request.getParameter("id");
+		System.out.println(id);
+		ArrayList<Integer> slist = new ArrayList<Integer>();
+		String sql = "SELECT SUM(money) FROM clientevent WHERE id=?";
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, username, password);
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs=psmt.executeQuery();
+			while(rs.next()) {
+				slist.add(rs.getInt(1));
+			}
+			return slist;
 	}
 	
 	

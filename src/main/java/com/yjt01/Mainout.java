@@ -36,6 +36,17 @@ public class Mainout implements Service{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		try {
+			ArrayList<Integer> sum= dao.sum(request);
+			request.setAttribute("sum", sum);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
