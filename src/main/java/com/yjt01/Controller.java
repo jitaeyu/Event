@@ -91,8 +91,10 @@ public class Controller extends HttpServlet {
 			comm.exec(request, response);
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('인원이 등록 되었습니다'); location.href='out.jsp';</script>");
+			out.println("<script>alert('인원이 등록 되었습니다'); history.back();</script>");
 			out.flush();
+//			location.href='out.jsp';
+			
 		}
 		
 		if(fname.equals("/eventinput.do")) {
@@ -103,8 +105,17 @@ public class Controller extends HttpServlet {
 			out.println("<script>alert('행사가 등록 되었습니다');history.back();</script>");
 			
 			out.flush();
-//			 location.href='out.jsp';
+
 		}
+		if(fname.equals("/join.do")) {
+			comm=new Userinfo();
+			comm.exec(request, response);
+			vpage="userinfo.jsp";
+			
+			RequestDispatcher rd = request.getRequestDispatcher(vpage);
+			rd.forward(request, response);
+		}
+		
 
 	}
 
