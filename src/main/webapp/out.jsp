@@ -59,7 +59,7 @@
         <link rel="stylesheet" href="css/bootstrap.css">
       </head>
 
-      <body>
+      <body onLoad=" LoadOnce()">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
             <span class="navbar-brand">
@@ -92,7 +92,7 @@
                 <p:forEach items="${clist}" var="content" varStatus="status">
                   <tr>
                     <th class="btn-outline" scope="row">${status.count}</th>
-                    <td>${content.name}</td>
+                    <td><a href="join.do?id=${content.id}&name=${content.name}">${content.name}</a></td>
                     <td>${content.event}</td>
                     <td>${content.date}</td>
                     <td>
@@ -233,7 +233,6 @@
           </div>
         </div>
 
-
         <script>
           function namevalue() {
             let dv = event.currentTarget;
@@ -244,7 +243,6 @@
             document.getElementById("num").value = dn.id;
           }
         </script>
-
 
 
 

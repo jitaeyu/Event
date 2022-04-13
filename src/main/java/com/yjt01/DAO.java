@@ -177,4 +177,49 @@ public class DAO {
 					e.printStackTrace();
 				}
 	}
+	public ArrayList<ContentDTO> userinfo(HttpServletRequest request) throws ClassNotFoundException, SQLException {
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		ArrayList<ContentDTO> infolist = new ArrayList<ContentDTO>();
+		Class.forName(driver);
+		con = DriverManager.getConnection(url, username, password);
+		String sql = "SELECT * FROM clientevent WHERE id=? AND name=? ORDER BY date DESC";
+		psmt=con.prepareStatement(sql);
+		psmt.setString(1, id);
+		psmt.setString(2, name);
+		rs=psmt.executeQuery();
+		while(rs.next()) {
+			ContentDTO adto = new ContentDTO();
+			adto.setCnum(rs.getInt(1));
+			adto.setId(rs.getString(2));
+			adto.setName(rs.getString(3));
+			adto.setEvent(rs.getString(4));
+			adto.setDate(rs.getString(5));
+			adto.setMoney(rs.getInt(6));
+			adto.setComent(rs.getString(7));
+			infolist.add(adto);
+			
+		}
+		return infolist;
+		
+	}
+	
+	public ArrayList<Integer> sumid(HttpServletRequest request) throws ClassNotFoundException, SQLException {
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		ArrayList<Integer> sumlist = new ArrayList<Integer>();
+		Class.forName(driver);
+		con = DriverManager.getConnection(url, username, password);
+		String sql = "SELECT SUM(money) FROM clientevent WHERE id=? AND name=?";
+		psmt=con.prepareStatement(sql);
+		psmt.setString(1, id);
+		psmt.setString(2, name);
+		rs=psmt.executeQuery();
+		while(rs.next()) {
+			sumlist.add(rs.getInt(1));
+		}
+		return sumlist;
+		
+	}
+	
 }
