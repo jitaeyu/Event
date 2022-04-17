@@ -47,6 +47,31 @@
 
           }
         </style>
+        
+          <!-- get방식 사용 시 url에 경로만 표시 -->
+		<script type="text/javascript">
+		history.replaceState({},null,location.pathname);
+		</script>
+
+
+        
+          <!-- 새로고침 방지 -->
+		<script language='javascript'>
+		
+		function noEvent() {
+		    if (event.keyCode == 116) {
+		        event.keyCode= 2;
+		        return false;
+		    }
+		    else if(event.ctrlKey && (event.keyCode==78 || event.keyCode == 82))
+		    {
+		        return false;
+		    }
+		}
+		document.onkeydown = noEvent;
+		
+		</script>
+
 
 
         <!-- Required meta tags -->
@@ -58,8 +83,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
       </head>
-
-      <body onLoad=" LoadOnce()">
+        <!-- body : oncontextmenu="return false" 우클릭 방지 -->
+      <body oncontextmenu="return false" onLoad=" LoadOnce()">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
             <span class="navbar-brand">
@@ -77,7 +102,7 @@
         <div class="row">
           <div class="col-sm-6">
             <table class="table">
-              <caption style="text-align: center" align="top">이벤트 현황</caption>
+              <caption style="text-align: center; margin-bottom: 12px" align="top">이벤트 현황</caption>
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">번호</th>
@@ -163,6 +188,9 @@
                   <p:forEach items="${id}" var="my" begin="0" end="0">
                     <input name="id" type="hidden" value="${my}">
                   </p:forEach>
+                  <p:forEach items="${pw}" var="pw" begin="0" end="0">
+                  <input name="pw" type="hidden" value="${pw}">
+                  </p:forEach>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">이름</label>
                     <input name="name" type="text" class="form-control" required="required">
@@ -201,6 +229,9 @@
                   <input id="num" name="num" type="hidden" value="">
                   <p:forEach items="${id}" var="my" begin="0" end="0">
                     <input name="id" type="hidden" value="${my}">
+                  </p:forEach>
+                   <p:forEach items="${pw}" var="pw" begin="0" end="0">
+                  <input name="pw" type="hidden" value="${pw}">
                   </p:forEach>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">이름</label>
