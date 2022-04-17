@@ -57,9 +57,9 @@ public class DAO {
 				if(rs.getString(1)!=null) {
 					log=1;
 					HttpSession hs = request.getSession(true);
-					System.out.println("session name"+rs.getString(3));
 					hs.setAttribute("name", rs.getString(3));
 					hs.setAttribute("id", rs.getString(1));
+					hs.setAttribute("pw", rs.getString(2));
 					return log;//DB서치 후 값이 있으면 리턴 1
 				}
 				else {

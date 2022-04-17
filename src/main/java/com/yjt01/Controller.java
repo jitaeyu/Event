@@ -88,22 +88,30 @@ public class Controller extends HttpServlet {
 		
 		if(fname.equals("/clientinput.do")) {
 			comm=new Clientinput();
+			
+			String id = request.getParameter("id");
+			String pw = request.getParameter("pw");
 			comm.exec(request, response);
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('인원이 등록 되었습니다'); history.back();</script>");
+			out.println("<script>alert('인원이 등록 되었습니다');location.href='login.do"
+					+ "?id="+id+"&pw="+pw
+					+ "'; </script>");
 			out.flush();
 //			location.href='out.jsp';
-			
+//			history.back();
 		}
 		
 		if(fname.equals("/eventinput.do")) {
 			comm=new Eventinput();
+			String id = request.getParameter("id");
+			String pw = request.getParameter("pw");
 			comm.exec(request, response);
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('행사가 등록 되었습니다');history.back();</script>");
-			
+			out.println("<script>alert('인원이 등록 되었습니다');location.href='login.do"
+					+ "?id="+id+"&pw="+pw
+					+ "'; </script>");
 			out.flush();
 
 		}

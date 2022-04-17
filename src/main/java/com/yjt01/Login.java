@@ -13,7 +13,6 @@ public class Login implements Service{
 		DAO dao = new DAO();
 		int log=0;
 			log = dao.login(request);
-			System.out.println("login.java in");
 			return log;
 		
 		
