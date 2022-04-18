@@ -6,6 +6,8 @@
 
       <head>
         <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=1250, initial-scale=1">
         <title>Insert title here</title>
 
         <style type="text/css">
@@ -60,12 +62,19 @@
       </head>
 
       <body>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
 			<div></div>
-            <button class="btn btn-secondary my-2 my-sm-0" onclick="history.go(-1)">뒤로가기</button>
+				<p:forEach items="${id}" var="id" begin="0" end="0">
+                    <input name="id" type="hidden" value="${id}">
+                  </p:forEach>
+                  <p:forEach items="${pw}" var="pw" begin="0" end="0">
+                  <input name="pw" type="hidden" value="${pw}">
+                  </p:forEach>
+            <button class="btn btn-secondary my-2 my-sm-0" onclick ="location.href='login.do?id=${id}&pw=${pw}'">뒤로가기</button>
           </div>
-
+		 			
         </nav>
 
 	<h3 style="margin-top: 20px" align="center">이벤트 히스토리</h3>
