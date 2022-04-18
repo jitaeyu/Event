@@ -1,6 +1,6 @@
 # JSP와 JAVA,MARIADB로 만든 개인 축의금 다이어리 페이지 입니다.
 #### 회원 가입 후 사용 할 수 있습니다.
-##### 초기 시작 URL은 http://localhost:8686/event/index 입니다.
+##### 초기 시작 URL은 http://localhost:8686/event/login 입니다.
 ##### 예시 홈페이지 URL http://yjt3602.cafe24.com/ 입니다.
 ##### 사용 SDK,라이브러리,DB
 
