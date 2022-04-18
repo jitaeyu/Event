@@ -1,7 +1,7 @@
 # JSP와 JAVA,MARIADB로 만든 개인 축의금 다이어리 페이지 입니다.
 #### 회원 가입 후 사용 할 수 있습니다.
-##### 초기 시작 URL은 http://localhost:8686/event/login 입니다.
-##### 예시 홈페이지 URL http://yjt3602.cafe24.com/ 입니다.(수일 내로 업데이트 예정)
+##### 초기 시작 URL은 http://localhost:8686/jiate/index 입니다.
+##### 예시 홈페이지 URL http://yjt3602.cafe24.com/ 입니다.
 ##### 사용 버전 : 라이브러리,DB 등
 
 + JAVA
@@ -59,7 +59,7 @@ AUTO_INCREMENT=13
 
 
   
-# **※ 모바일 접속 시 화면은 width : 1250(px)고정입니다.**
+# **※ 모바일 미디어쿼리는 최소한으로 진행했습니다. PC로 접속해주세요.**
 # login
 ![event_login](https://user-images.githubusercontent.com/84373336/163759935-9debf425-44d4-403b-b727-417a8f7f29b4.jpg)
 
