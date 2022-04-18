@@ -74,3 +74,6 @@ AUTO_INCREMENT=13
 
 # out_content_input_modal
 ![event_input_content_modal](https://user-images.githubusercontent.com/84373336/163760681-73d9c4fc-51d0-4e37-a92b-46798cd25b56.jpg)
+
+# event_total_history
+![image](https://user-images.githubusercontent.com/84373336/163820533-7b0a8709-8907-4dc6-963c-fe2692bf5166.png)
