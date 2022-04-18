@@ -6,6 +6,8 @@
 
       <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1250, initial-scale=1">
         <title>Insert title here</title>
 
         <style type="text/css">
@@ -48,13 +50,7 @@
           }
         </style>
         
-          <!-- get방식 사용 시 url에 경로만 표시 -->
-		<script type="text/javascript">
-		history.replaceState({},null,location.pathname);
-		</script>
 
-
-        
           <!-- 새로고침 방지 -->
 		<script language='javascript'>
 		
@@ -79,7 +75,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=714, initial-scale=1">
 
-
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
       </head>
@@ -94,7 +89,6 @@
             </span>
             <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href='logout.do'">로그아웃</button>
           </div>
-
         </nav>
 
 
@@ -125,7 +119,6 @@
                         ${content.money}
                       </f:formatNumber>
                     </td>
-
                     <td>${content.coment}</td>
                   </tr>
                 </p:forEach>
