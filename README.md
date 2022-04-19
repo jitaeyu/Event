@@ -60,20 +60,20 @@ AUTO_INCREMENT=13
 
   
 # **※ 모바일 미디어쿼리는 최소한으로 진행했습니다. PC로 접속해주세요.**
-# login
+# 로그인
 ![event_login](https://user-images.githubusercontent.com/84373336/163759935-9debf425-44d4-403b-b727-417a8f7f29b4.jpg)
 
-# signin
+# 회원가입
 ![event_signin](https://user-images.githubusercontent.com/84373336/163760022-cfdcf2ab-43ea-4f5c-a027-a3e23d407bd8.jpg)
 
-# out
+# 메인페이지
 ![event_out](https://user-images.githubusercontent.com/84373336/163760146-7de97da2-c0ad-46c1-a1e7-148f9002581a.jpg)
 
-# out_friend_input_modal
+# 인원 모달
 ![event_friend_input_modal](https://user-images.githubusercontent.com/84373336/163760447-f07a2ac6-fa73-499a-950c-47e852ee3e78.jpg)
 
-# out_content_input_modal
+# 컨텐츠 모달
 ![event_input_content_modal](https://user-images.githubusercontent.com/84373336/163760681-73d9c4fc-51d0-4e37-a92b-46798cd25b56.jpg)
 
-# event_total_history
+# 이벤트 히스토리 페이지
 ![image](https://user-images.githubusercontent.com/84373336/163820533-7b0a8709-8907-4dc6-963c-fe2692bf5166.png)
