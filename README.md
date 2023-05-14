@@ -2,7 +2,7 @@
 #### 회원 가입 후 사용 할 수 있습니다.
 ##### 초기 시작 URL은 http://localhost:8686/jitae/index 입니다.
 ##### 예시 홈페이지 URL ~~http://yjt3602.cafe24.com/~~ 입니다.
-##### 사용 버전 : 라이브러리,DB 등
+##### 사용 버전 : 라이브러리, DB 등
 
 + JAVA
   + JAVA SE 1.8
